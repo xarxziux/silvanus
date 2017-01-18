@@ -1,0 +1,27 @@
+{
+  "name": "silvanus",
+  "version": "0.0.1",
+  "description": "Binary search tree implemented in Javascript.",
+  "main": "./bin/silvanus.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "bash ./build_scripts/build.sh || echo Compilation failed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xarxziux/silvanus.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "binary",
+    "search",
+    "tree",
+    "ES6"
+  ],
+  "author": "Delaney, Alan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xarxziux/silvanus/issues"
+  },
+  "homepage": "https://github.com/xarxziux/silvanus#readme"
+}

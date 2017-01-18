@@ -10,13 +10,13 @@ buildNum=$((buildNum + 1))
 echo -n "${buildNum}" > build_number
 
 # Define the file and directory names
-baseFile="./src/0_base/druantia.ts"
-tscFile="./src/1_tsc/druantia.js"
-ugFile="./src/2_uglified/druantia.min.js"
+baseFile="./src/0_base/silvanus.js"
+# tscFile="./src/1_tsc/silvanus.js"
+ugFile="./src/2_uglified/silvanus.min.js"
 outDir="./bin/"
 
 # If the main file has already been compiled then exit
-if [ "${baseFile}" -ot "${outFile}" ]
+if test "${baseFile}" -ot "${outFile}"
 then
     echo Source file is up-to-date.
     echo
@@ -24,11 +24,16 @@ then
 fi
 
 # Compile the source and update the bin/ directory
-tsc
-jshint "${tscFile}"
-uglifyjs "${tscFile}" -c -m -o "${ugFile}"
-cp -v "${tscFile}" "${outDir}"
-cp -v "${ugFile}" "${outDir}"
+# tsc
+echo Checking syntax...
+jshint "${baseFile}"
+echo Success.  Running in node...
+node "${baseFile}"
+# echo Success.  Minifying...
+# uglifyjs "${baseFile}" -c -m -o "${ugFile}"
+echo Success.  Copying files to bin/ directory...
+cp -v "${baseFile}" "${outDir}"
+#cp -v "${ugFile}" "${outDir}"
 
 # Get a commit message (optional)
 echo 
@@ -37,10 +42,10 @@ echo An empty string skips this step:
 read -p "> " commitMsg
 
 # If we have a commit message, update the version number and commit
-if [ -n "${commitMsg}" ]
+if test -n "${commitMsg}"
 then
     versionNum="$(npm list --depth=0 | \
-        grep druantia | \
+        grep silvanus | \
         grep -o '[0-9]\+\.[0-9]\+\.[0-9]\+')"
     commitStr="${versionNum}.${buildNum}: ${commitMsg}"
     npm --no-git-tag-version version patch

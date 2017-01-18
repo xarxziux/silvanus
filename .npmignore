@@ -1,4 +1,5 @@
 # Mirror .gitignore
+archive/
 testing/
 *.test.js
 *.bak

@@ -1,3 +1,3 @@
-# Druantia
+# Silvanus
 
-Binary search tree implemented in Javascript ES3.
+Binary search tree implemented in Javascript.
