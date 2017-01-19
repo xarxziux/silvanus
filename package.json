@@ -1,10 +1,10 @@
 {
   "name": "silvanus",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Binary search tree implemented in Javascript.",
   "main": "./bin/silvanus.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha",
     "build": "bash ./build_scripts/build.sh || echo Compilation failed"
   },
   "repository": {
@@ -23,5 +23,12 @@
   "bugs": {
     "url": "https://github.com/xarxziux/silvanus/issues"
   },
-  "homepage": "https://github.com/xarxziux/silvanus#readme"
+  "homepage": "https://github.com/xarxziux/silvanus#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "jshint": "^2.9.4",
+    "minifier": "^0.8.0",
+    "mocha": "^3.2.0",
+    "typescript": "^2.1.5"
+  }
 }

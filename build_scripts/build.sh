@@ -12,7 +12,7 @@ echo -n "${buildNum}" > build_number
 # Define the file and directory names
 baseFile="./src/0_base/silvanus.js"
 # tscFile="./src/1_tsc/silvanus.js"
-ugFile="./src/2_uglified/silvanus.min.js"
+# minFile="./src/2_minified/silvanus.min.js"
 outDir="./bin/"
 
 # If the main file has already been compiled then exit
@@ -27,13 +27,14 @@ fi
 # tsc
 echo Checking syntax...
 jshint "${baseFile}"
-echo Success.  Running in node...
-node "${baseFile}"
+echo Success.  Running tests with Mocha...
+npm test
 # echo Success.  Minifying...
-# uglifyjs "${baseFile}" -c -m -o "${ugFile}"
+# uglify "${baseFile}" -c -m -o "${mnFile}"
+# minify [ --output "${minFile}" ] "${baseFile}"
 echo Success.  Copying files to bin/ directory...
 cp -v "${baseFile}" "${outDir}"
-#cp -v "${ugFile}" "${outDir}"
+# cp -v "${minFile}" "${outDir}"
 
 # Get a commit message (optional)
 echo 
