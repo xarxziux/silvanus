@@ -2,6 +2,9 @@
 
 ## 2016-01-18
 
+### Changed
+- Wrote a more meaningful README.
+
 ### Added
 - Added basic test suite using Mocha.
 - Set empty node left and right properties to getters and reverted non-empty left and right to properties.
