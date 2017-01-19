@@ -1,6 +1,6 @@
 {
   "name": "silvanus",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Binary search tree implemented in Javascript.",
   "main": "./bin/silvanus.js",
   "scripts": {
